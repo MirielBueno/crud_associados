@@ -1,0 +1,29 @@
+### Cadastrar associado
+POST http://localhost:3000/associados
+Content-Type: application/json
+
+{
+    "cpf_associado": "00000000006",
+    "nome_associado": "Felipe Rocha",
+    "email_associado": "felipe.rocha@example.com"
+}
+### Buscar associado por CPF
+GET http://localhost:3000/associados/00000000006
+
+### Atualizar associado
+PUT http://localhost:3000/associados/00000000006
+Content-Type: application/json
+
+{
+    "nome_associado": "Felipe Rocha Silva",
+    "email_associado": "felipe.silva@example.com"
+}
+
+### 1. Exclusão lógica: desativar associado
+DELETE http://localhost:3000/associados/00000000006
+
+### 2. Verificar se foi desativado
+GET http://localhost:3000/associados/00000000006
+
+### 3. Exclusão definitiva: apagar do banco
+DELETE http://localhost:3000/associados/00000000006/permanente
